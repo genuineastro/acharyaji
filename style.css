@@ -84,8 +84,20 @@ header.nav{display:flex;align-items:center;justify-content:space-between;padding
 .global strong span{font-size:inherit;color:inherit}
 
 .eyebrow{display:inline-block;margin-top:22px;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--rose)}
-.hero h1{font-size:clamp(30px,9vw,44px);margin:8px 0 10px}
-.hero h1 em{font-style:italic;color:var(--teal)}
+.hero h1{font-size:clamp(23px,7.1vw,40px);margin:8px 0 10px}
+/* "Paid Consultation Only" – flowing colour animation */
+.hero h1 em{
+  font-style:italic;display:inline-block;
+  background:linear-gradient(90deg,var(--teal),var(--rose),#e0812a,var(--rose),var(--teal));
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:flow 4s linear infinite, glow 2s ease-in-out infinite;
+}
+@keyframes flow{from{background-position:0% 50%}to{background-position:300% 50%}}
+@keyframes glow{
+  0%,100%{filter:drop-shadow(0 0 0 rgba(200,85,61,0))}
+  50%{filter:drop-shadow(0 0 8px rgba(200,85,61,.4))}
+}
 .hero p.lead{color:var(--muted);font-size:clamp(15px,4.2vw,17px);max-width:440px;margin:0 auto}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 6px}
 .chips span{background:var(--white);border:1px solid #e6dccd;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
@@ -178,5 +190,5 @@ footer{text-align:center;font-size:12px;color:var(--muted);padding:18px 18px 8px
 
 /* turn animations off for visitors who prefer less motion */
 @media (prefers-reduced-motion: reduce){
-  .wa,.wa::before,.wa-inner::after{animation:none}
+  .wa,.wa::before,.wa-inner::after,.hero h1 em{animation:none}
 }
