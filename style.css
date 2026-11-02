@@ -1,20 +1,23 @@
 /* ===== EDIT COLOURS HERE ===== */
 :root{
-  --green:#1fa855;
-  --cream:#fbf6ef;
-  --sand:#f1e6d6;
-  --ink:#1f2a37;
-  --muted:#5b6573;
-  --teal:#0f5c5a;
-  --rose:#c8553d;
-  --gold:#d9a441;
+  --green:#1fa855;      /* WhatsApp green */
+  --blush:#fdf5f9;      /* page background (very light pink) */
+  --petal:#f7e4ef;      /* light pink panels */
+  --ink:#2b1d3a;        /* dark text (deep aubergine) */
+  --muted:#6e6280;      /* softer text */
+  --plum:#6a2c8a;       /* main purple */
+  --plum-dark:#4a1d63;  /* darker purple */
+  --pink:#d6408f;       /* bright pink accent */
+  --gold:#e3b04b;       /* gold touch */
+  --border:#eed8e6;     /* soft borders */
   --white:#ffffff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
   font-family:'DM Sans',system-ui,sans-serif;
-  color:var(--ink);background:var(--cream);
+  color:var(--ink);background-color:var(--blush);
+  background-image:radial-gradient(ellipse at 50% 0%,rgba(214,64,143,.10),transparent 60%);
   line-height:1.55;overflow-x:hidden;
   padding-bottom:calc(92px + env(safe-area-inset-bottom));
 }
@@ -33,25 +36,25 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;c
 .paid b{color:var(--gold);font-weight:700}
 
 /* ---------- top bar ---------- */
-.topbar{background:var(--teal);color:#e8f1ef;font-size:13px;font-weight:500;text-align:center;padding:8px 12px;letter-spacing:.3px}
+.topbar{background:linear-gradient(90deg,var(--plum-dark),var(--plum),var(--pink));color:#f6e9f7;font-size:13px;font-weight:500;text-align:center;padding:8px 12px;letter-spacing:.3px}
 .topbar svg{vertical-align:-2px;margin-right:4px}
 header.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--teal)}
+.brand{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--plum)}
 .brand small{display:block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
-.nav a.call{font-size:14px;font-weight:700;color:var(--rose);text-decoration:none;border:1.5px solid var(--rose);padding:7px 14px;border-radius:999px}
+.nav a.call{font-size:14px;font-weight:700;color:var(--pink);text-decoration:none;border:1.5px solid var(--pink);padding:7px 14px;border-radius:999px}
 
 /* ---------- shared carousel ---------- */
-.carousel{position:relative;overflow:hidden;background:var(--sand)}
+.carousel{position:relative;overflow:hidden;background:var(--petal)}
 .track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);touch-action:pan-y}
 .slide{min-width:100%;position:relative}
 .slide img{width:100%;height:100%;object-fit:cover}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.95);color:var(--teal);font-size:24px;line-height:38px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);padding:0;-webkit-tap-highlight-color:transparent}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.95);color:var(--plum);font-size:24px;line-height:38px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);padding:0;-webkit-tap-highlight-color:transparent}
 .arrow.prev{left:8px}.arrow.next{right:8px}
 .dots{display:flex;justify-content:center;gap:2px;margin-top:8px}
 .dots button{width:26px;height:28px;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
-.dots button::after{content:'';width:8px;height:8px;border-radius:4px;background:#d4c6b1;transition:width .3s}
-.dots button.on::after{width:22px;background:var(--teal)}
-.ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#9a8a74;font-size:14px;text-align:center;padding:10px;background:linear-gradient(160deg,#f6ecdf,#e9dac6)}
+.dots button::after{content:'';width:8px;height:8px;border-radius:4px;background:#e2c6d8;transition:width .3s}
+.dots button.on::after{width:22px;background:var(--pink)}
+.ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#a0849a;font-size:14px;text-align:center;padding:10px;background:linear-gradient(160deg,#fbeaf3,#ecd6ea)}
 
 /* ---------- hero ---------- */
 .hero{padding:6px 0 8px;text-align:center}
@@ -59,48 +62,48 @@ header.nav{display:flex;align-items:center;justify-content:space-between;padding
   width:clamp(220px,72vw,330px);margin:0 auto;
   border-radius:999px 999px 20px 20px;
   border:6px solid var(--white);
-  box-shadow:0 14px 34px rgba(15,92,90,.18);
+  box-shadow:0 14px 34px rgba(106,44,138,.22);
 }
 .hero-carousel .slide{aspect-ratio:4/5}
 .hero-carousel .arrow{width:34px;height:34px;font-size:20px;line-height:32px}
 .country{
   position:absolute;left:50%;bottom:12px;transform:translateX(-50%);
-  background:var(--teal);color:#fff;font-size:13px;font-weight:700;
+  background:linear-gradient(90deg,var(--plum),var(--pink));color:#fff;font-size:13px;font-weight:700;
   padding:6px 14px;border-radius:999px;white-space:nowrap;
 }
 
 .global{
   margin:18px auto 0;max-width:440px;
-  background:var(--white);border:1px solid #eadfcd;border-radius:18px;
+  background:var(--white);border:1px solid var(--border);border-radius:18px;
   padding:14px 16px;display:flex;align-items:center;gap:14px;text-align:left;
 }
 .global .num{
   flex:none;width:58px;height:58px;border-radius:50%;
-  background:var(--rose);color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:28px;
+  background:linear-gradient(135deg,var(--pink),var(--plum));color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:28px;
   display:flex;align-items:center;justify-content:center;
 }
 .global strong{display:block;font-size:16px}
 .global span{font-size:13.5px;color:var(--muted)}
 .global strong span{font-size:inherit;color:inherit}
 
-.eyebrow{display:inline-block;margin-top:22px;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--rose)}
+.eyebrow{display:inline-block;margin-top:22px;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--pink)}
 .hero h1{font-size:clamp(23px,7.1vw,40px);margin:8px 0 10px}
 /* "Paid Consultation Only" – flowing colour animation */
 .hero h1 em{
   font-style:italic;display:inline-block;
-  background:linear-gradient(90deg,var(--teal),var(--rose),#e0812a,var(--rose),var(--teal));
+  background:linear-gradient(90deg,var(--plum),var(--pink),#e0812a,var(--pink),var(--plum));
   background-size:300% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent;
   animation:flow 4s linear infinite, glow 2s ease-in-out infinite;
 }
 @keyframes flow{from{background-position:0% 50%}to{background-position:300% 50%}}
 @keyframes glow{
-  0%,100%{filter:drop-shadow(0 0 0 rgba(200,85,61,0))}
-  50%{filter:drop-shadow(0 0 8px rgba(200,85,61,.4))}
+  0%,100%{filter:drop-shadow(0 0 0 rgba(214,64,143,0))}
+  50%{filter:drop-shadow(0 0 8px rgba(214,64,143,.45))}
 }
 .hero p.lead{color:var(--muted);font-size:clamp(15px,4.2vw,17px);max-width:440px;margin:0 auto}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 6px}
-.chips span{background:var(--white);border:1px solid #e6dccd;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
+.chips span{background:var(--white);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500}
 
 /* ---------- sections ---------- */
 section{padding:30px 0 6px}
@@ -123,26 +126,26 @@ section{padding:30px 0 6px}
 
 /* ---------- help cards ---------- */
 .cards{display:grid;gap:12px}
-.card{background:var(--white);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:flex-start;border:1px solid #eee3d3;
+.card{background:var(--white);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:flex-start;border:1px solid var(--border);
   color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s;-webkit-tap-highlight-color:transparent}
-.card:hover,.card:active{border-color:var(--teal);box-shadow:0 8px 20px rgba(15,92,90,.12);transform:translateY(-2px)}
+.card:hover,.card:active{border-color:var(--plum);box-shadow:0 8px 20px rgba(106,44,138,.15);transform:translateY(-2px)}
 .card .go{display:inline-block;margin-top:8px;font-size:14px;font-weight:700;color:#1a9a4b}
-.icon{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#e6f0ee;color:var(--teal)}
+.icon{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#f3e3f6;color:var(--plum)}
 .card h3{font-size:18px;margin-bottom:2px}
 .card p{font-size:14.5px;color:var(--muted)}
 
 /* ---------- steps ---------- */
 .steps{counter-reset:s;display:grid;gap:10px}
-.step{display:flex;gap:14px;align-items:center;background:var(--sand);border-radius:14px;padding:14px 16px;font-size:15px}
-.step::before{counter-increment:s;content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--rose);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step{display:flex;gap:14px;align-items:center;background:var(--petal);border-radius:14px;padding:14px 16px;font-size:15px}
+.step::before{counter-increment:s;content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--pink);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
 
 /* ---------- canada band ---------- */
-.canada{margin-top:30px;background:var(--teal);color:#e8f1ef;padding:28px 0;text-align:center}
+.canada{margin-top:30px;background:linear-gradient(135deg,var(--plum-dark),var(--plum) 55%,var(--pink));color:#f6e9f7;padding:28px 0;text-align:center}
 .canada h2{color:#fff;font-size:clamp(22px,6.5vw,28px);margin:6px 0 8px}
 .canada p{font-size:14px;line-height:1.8;opacity:.9}
 
 .promise{text-align:center;padding:26px 18px 8px}
-.promise p{font-family:'Fraunces',serif;font-size:clamp(19px,5.4vw,23px);font-style:italic;color:var(--teal)}
+.promise p{font-family:'Fraunces',serif;font-size:clamp(19px,5.4vw,23px);font-style:italic;color:var(--plum)}
 footer{text-align:center;font-size:12px;color:var(--muted);padding:18px 18px 8px}
 
 /* ---------- floating WhatsApp button with moving border lights ---------- */
