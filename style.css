@@ -219,6 +219,9 @@ footer .care strong{color:var(--gold)}
   transform:translate(-50%,-50%) rotate(0deg);
   animation:spin 4s linear infinite;
 }
+/* hidden until the "Talk to Acharya Ji privately" button scrolls off screen */
+.sticky-ready .wa{transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .35s ease}
+.sticky-ready .wa:not(.show){transform:translateY(140%);opacity:0;pointer-events:none}
 .wa-inner{
   display:flex;align-items:center;justify-content:center;gap:10px;
   background:var(--green);color:#fff;
