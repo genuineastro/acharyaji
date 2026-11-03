@@ -84,3 +84,16 @@ document.querySelectorAll('.carousel').forEach(function(c){
     var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(dx<0?i+1:i-1);restart();}x0=null;});
   go(0);restart();
 });
+
+// Bottom WhatsApp button: show it only after the main "Talk to Acharya Ji privately"
+// button has scrolled off the top of the screen
+(function(){
+  var heroBtn=document.querySelector('.hero .btn-primary'), sticky=document.querySelector('.wa');
+  if(!heroBtn||!sticky||!('IntersectionObserver' in window))return; // older browsers: button just stays visible
+  document.body.classList.add('sticky-ready');
+  new IntersectionObserver(function(entries){
+    var e=entries[0];
+    var scrolledPast=!e.isIntersecting && e.boundingClientRect.top<0;
+    sticky.classList.toggle('show',scrolledPast);
+  },{threshold:0}).observe(heroBtn);
+})();
